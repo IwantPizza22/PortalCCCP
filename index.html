@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add('js')</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Портал в СССР — горячие пончики и кофе</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Oswald:wght@500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{--red:#d13620;--red2:#b32d1a;--cream:#fef1c4;--paper:#ead9b3;--ink:#2a1610;--gold:#f0b44c;--sepia:#6b5237}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{background:var(--cream);color:var(--ink);font:18px/1.6 'PT Serif',serif;overflow-x:hidden;
+background-image:radial-gradient(rgba(107,82,55,.08) 1px,transparent 1.5px);background-size:7px 7px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.plak{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.script{font-family:'Marck Script',cursive}
+/* top bar */
+header.top{position:sticky;top:0;z-index:20;background:var(--red);color:var(--cream);display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.2rem;border-bottom:4px solid var(--gold)}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:'Oswald';font-weight:700;font-size:1.2rem;line-height:1;text-decoration:none}
+.logo svg{width:34px;height:34px}
+nav{display:flex;gap:1.2rem;align-items:center;font-family:'Oswald';text-transform:uppercase;font-size:.95rem}
+nav a{text-decoration:none}nav a:hover{color:var(--gold)}
+.bag-btn{background:var(--cream);color:var(--red);border:0;border-radius:2rem;padding:.35rem .9rem;font:700 .95rem 'Oswald';cursor:pointer;text-transform:uppercase}
+/* hero */
+.hero{position:relative;background:linear-gradient(180deg,#fff6d6 0%,#fde8a8 100%);padding:3rem 1.2rem 0;overflow:hidden}
+.hero-in{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.1fr 1fr;gap:1rem;align-items:center}
+.tag{font-family:'Oswald';color:var(--red);border-left:2px solid var(--red);padding-left:.8rem;max-width:16rem;font-size:1.05rem;line-height:1.2;text-transform:none}
+.hero h1{font-weight:400;line-height:.95;margin:1rem 0}
+.hero h1 .script{display:block;color:var(--red);font-size:clamp(3rem,9vw,5.8rem);transform:rotate(-4deg);transform-origin:left}
+.hero h1 .plak{display:block;color:var(--red);font-weight:700;font-size:clamp(3rem,10vw,6.4rem);line-height:.95}
+.sub{font-family:'Marck Script';color:#9f2a19;font-size:1.5rem}
+.arrow{display:inline-flex;align-items:center;margin-top:1.2rem;text-decoration:none}
+.arrow i{width:0;height:0;border:34px solid transparent;border-right:46px solid var(--red);border-left:0;margin-right:-4px}
+.arrow b{background:var(--red);color:var(--cream);font:700 1.6rem 'Oswald';padding:.5rem 1.4rem;border:3px dotted var(--cream);outline:3px solid var(--red);outline-offset:-3px;border-radius:4px}
+.arrow:hover b,.arrow:hover i{filter:brightness(1.15)}
+.hero-art{position:relative}
+.hero-art svg{width:100%;height:auto;display:block}
+.donut-float{animation:bob 5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.slogan{margin-top:2rem;background:var(--red);color:var(--cream);text-align:center;font:500 clamp(1rem,3vw,1.5rem) 'Oswald';letter-spacing:.12em;text-transform:uppercase;padding:.9rem 1rem;position:relative}
+.slogan span{color:var(--gold);margin:0 1rem}
+
+@media(max-width:760px){.hero-in{grid-template-columns:1fr}.hero-art{order:-1;max-width:420px;margin:auto}}
+/* newspaper */
+section{padding:4rem 1.2rem}
+.paper{max-width:1000px;margin:auto;background:#e9d8ae;background-image:radial-gradient(rgba(90,60,30,.12) 1px,transparent 1.5px),linear-gradient(90deg,rgba(0,0,0,.06),transparent 8%,transparent 92%,rgba(0,0,0,.08));background-size:5px 5px,100% 100%;padding:1.5rem 1.6rem 2rem;box-shadow:0 2px 0 #cdb985,0 14px 30px rgba(60,35,15,.35);transform:rotate(-.4deg);color:#2b2118}
+.mast{text-align:center;border-bottom:4px double #2b2118;padding-bottom:.6rem}
+.mast .meta{display:flex;justify-content:space-between;font:.8rem 'PT Serif';border-bottom:1px solid #2b2118;padding-bottom:.3rem;margin-bottom:.4rem;gap:.5rem}
+.mast h2{font:900 clamp(2.2rem,8vw,4.6rem)/1 'Playfair Display',serif;letter-spacing:-.01em}
+.mast .motto{font:italic 1rem 'PT Serif';border-top:1px solid #2b2118;margin-top:.5rem;padding-top:.3rem}
+.paper h3{font:900 clamp(1.6rem,4.5vw,2.6rem)/1.1 'Playfair Display',serif;text-align:center;margin:1.2rem 0 .3rem}
+.lead{text-align:center;font-style:italic;margin-bottom:1rem;border-bottom:1px solid #2b2118;padding-bottom:.8rem}
+.cols{column-count:3;column-gap:1.6rem;column-rule:1px solid rgba(43,33,24,.5);text-align:justify;hyphens:auto;font-size:.98rem;line-height:1.5}
+.cols p{margin-bottom:.7rem}
+.cols p:first-child::first-letter{float:left;font:900 3.6rem/.8 'Playfair Display';padding:.25rem .4rem 0 0}
+.photo{break-inside:avoid;margin:0 0 .8rem;border:1px solid #2b2118;padding:4px;background:#f1e4c2}
+.photo svg{display:block;width:100%;height:auto;filter:sepia(.7) contrast(1.1)}
+.photo figcaption{font-size:.75rem;font-style:italic;margin-top:.2rem}
+.quote{break-inside:avoid;border-top:3px solid #2b2118;border-bottom:3px solid #2b2118;padding:.5rem 0;margin:.4rem 0 .9rem;font:italic 700 1.15rem/1.3 'Playfair Display';text-align:center}
+@media(max-width:820px){.cols{column-count:2}}@media(max-width:560px){.cols{column-count:1;column-rule:0}.paper{padding:1rem;transform:none}}
+.gost{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin-top:1.2rem;font:500 .95rem 'Oswald';text-transform:uppercase}
+.gost span{border:2px solid #2b2118;padding:.2rem .8rem}
+/* reveal of newspaper columns */
+.js .rev{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .rev.on{opacity:1;transform:none}
+/* menu */
+#menu{background:var(--red);color:var(--cream);background-image:radial-gradient(rgba(255,255,255,.07) 2px,transparent 2.5px);background-size:22px 22px}
+.menu-h{max-width:1100px;margin:0 auto 2rem;text-align:center}
+.menu-h h2{font:700 clamp(2.4rem,7vw,4.2rem)/1 'Oswald';text-transform:uppercase}
+.menu-h p{font-family:'Marck Script';font-size:1.6rem;color:#ffd98a}
+.cat{max-width:1100px;margin:2rem auto .8rem;font:700 1.4rem 'Oswald';text-transform:uppercase;display:flex;align-items:center;gap:1rem;color:var(--gold)}
+.cat::after{content:"";flex:1;border-top:2px dashed var(--gold)}
+.grid{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.4rem}
+.tick{background:var(--cream);color:var(--ink);position:relative;padding:1rem 1rem 1rem 1.2rem;border:2px solid var(--ink);
+-webkit-mask:radial-gradient(circle 8px at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 8px at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat;mask:radial-gradient(circle 8px at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 8px at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat;
+display:flex;flex-direction:column;gap:.4rem;transition:transform .25s}
+.tick:hover{transform:rotate(-1deg) translateY(-3px)}
+.tick .gost-l{font:.72rem 'Oswald';letter-spacing:.1em;text-transform:uppercase;color:var(--red);border-bottom:1px dashed var(--red);padding-bottom:.2rem;display:flex;justify-content:space-between}
+.tick h4{font:700 1.35rem/1.15 'Oswald';text-transform:uppercase;color:var(--red)}
+.tick p{font-size:.92rem;line-height:1.4;flex:1}
+.tick .row{display:flex;align-items:flex-end;justify-content:space-between;gap:.5rem;margin-top:.3rem}
+.price{font:700 2rem/1 'Oswald';color:var(--ink)}.price small{font-size:1rem}
+.add{background:var(--red);color:var(--cream);border:0;font:700 .9rem 'Oswald';text-transform:uppercase;padding:.55rem .9rem;cursor:pointer;border-radius:3px}
+.add:hover{background:var(--red2)}.add:active{transform:scale(.94)}
+.note{max-width:1100px;margin:2rem auto 0;font-size:.85rem;opacity:.8;text-align:center}
+/* bag */
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(400px,100%);background:var(--cream);color:var(--ink);z-index:40;transform:translateX(105%);transition:transform .4s;padding:1.2rem;display:flex;flex-direction:column;border-left:6px solid var(--red);box-shadow:-10px 0 30px rgba(0,0,0,.4)}
+.drawer.open{transform:none}
+.drawer h5{font:700 1.7rem 'Oswald';text-transform:uppercase;color:var(--red);display:flex;justify-content:space-between;align-items:center}
+.drawer h5 button{background:none;border:0;font-size:2rem;cursor:pointer;color:var(--ink)}
+.drawer ul{list-style:none;padding:0;margin:1rem 0;flex:1;overflow:auto}
+.drawer li{display:flex;justify-content:space-between;align-items:center;gap:.5rem;border-bottom:1px dotted var(--sepia);padding:.5rem 0;font-size:.95rem}
+.qty button{width:26px;height:26px;border:1px solid var(--ink);background:none;cursor:pointer;font-weight:700}
+.empty{font-style:italic;opacity:.7}
+.total{font:700 1.5rem 'Oswald';display:flex;justify-content:space-between;border-top:3px double var(--ink);padding-top:.6rem;text-transform:uppercase}
+.go{margin-top:.8rem;background:var(--red);color:var(--cream);border:0;font:700 1.2rem 'Oswald';text-transform:uppercase;padding:.8rem;cursor:pointer}
+.go:disabled{opacity:.4;cursor:not-allowed}
+.scrim{position:fixed;inset:0;background:rgba(60,15,8,.55);z-index:30;opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.on{opacity:1;pointer-events:auto}
+.stamp{position:fixed;left:50%;top:50%;z-index:60;pointer-events:none;font:700 clamp(2.2rem,9vw,4.5rem)/1 'Oswald';text-transform:uppercase;color:var(--red);border:8px double var(--red);padding:.6rem 1.4rem;border-radius:10px;text-align:center;background:rgba(254,241,196,.9);opacity:0;transform:translate(-50%,-50%) rotate(-12deg) scale(3)}
+.stamp small{display:block;font:500 1rem 'PT Serif';letter-spacing:0;text-transform:none}
+.stamp.hit{animation:hit 2.4s ease-out forwards}
+@keyframes hit{0%{opacity:0;transform:translate(-50%,-50%) rotate(-12deg) scale(3)}12%{opacity:1;transform:translate(-50%,-50%) rotate(-12deg) scale(.95)}18%{transform:translate(-50%,-50%) rotate(-12deg) scale(1.03)}24%{transform:translate(-50%,-50%) rotate(-12deg) scale(1)}80%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) rotate(-12deg) scale(1)}}
+/* footer */
+footer{background:#3a150d;color:var(--cream);padding:3rem 1.2rem 2rem}
+.copy{text-align:center;margin-top:1.6rem;font-size:.85rem;opacity:.7}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.js .rev{opacity:1;transform:none}}
+
+.ph{display:block;max-width:100%;color:var(--sepia);font:.8rem 'PT Serif';text-align:center;min-height:90px;object-fit:cover}
+.logo-img{width:34px;height:34px;min-height:0;border-color:rgba(254,241,196,.5);color:transparent;overflow:hidden}
+.hero-img{width:100%;aspect-ratio:11/10;border-radius:6px}
+.photo img{width:100%;aspect-ratio:3/2;filter:sepia(.7) contrast(1.1)}
+.tick img{width:100%;aspect-ratio:4/3;border-radius:2px;margin-bottom:.2rem;color:var(--sepia)}
+/* history */
+#history .paper{transform:rotate(.3deg)}
+.hrow{display:grid;grid-template-columns:1fr 1.3fr;gap:1.6rem;align-items:start;padding:1.2rem 0;border-bottom:1px solid rgba(43,33,24,.5)}
+.hrow:last-child{border-bottom:0}
+.hrow.flip{grid-template-columns:1.3fr 1fr}
+.hrow.flip .photo{order:2}
+.hrow .photo{margin:0}
+.hrow h4{font:900 1.5rem/1.15 'Playfair Display',serif;margin-bottom:.4rem}
+.hrow .year{font:500 .95rem 'Oswald';text-transform:uppercase;border:2px solid #2b2118;display:inline-block;padding:0 .6rem;margin-bottom:.5rem}
+.hrow p{text-align:justify;hyphens:auto;font-size:.98rem;line-height:1.5}
+@media(max-width:640px){.hrow,.hrow.flip{grid-template-columns:1fr}.hrow.flip .photo{order:0}}
+/* contacts */
+.contacts{max-width:1000px;margin:auto;display:grid;grid-template-columns:1fr 1.4fr;gap:2rem;align-items:stretch}
+.contacts h2{font:700 clamp(1.6rem,5vw,2.4rem)/1.1 'Oswald';text-transform:uppercase;margin-bottom:1rem}
+.contacts p{margin-bottom:.5rem}.contacts p b{font-family:'Oswald';font-weight:500;color:var(--gold)}
+.route{display:inline-block;margin-top:1rem;background:var(--red);color:var(--cream);font:700 1rem 'Oswald';text-transform:uppercase;text-decoration:none;padding:.7rem 1.2rem;border-radius:3px}
+.route:hover{background:var(--red2)}
+.map{border:4px solid var(--cream);min-height:320px;width:100%;height:100%;background:#3b2a21}
+@media(max-width:700px){.contacts{grid-template-columns:1fr}}
+.sign{background:#1f6b4a;border:6px solid #fef1c4;outline:2px solid #1f6b4a;outline-offset:-10px;border-radius:6px;padding:1.6rem 1.4rem;box-shadow:0 0 0 4px #1f6b4a,0 10px 30px #000;max-width:760px;margin:0 auto 2.2rem}
+.sign h2{font:700 clamp(1.5rem,5vw,2.4rem)/1.1 'Oswald';text-transform:uppercase;color:#fef1c4;margin-bottom:.8rem}
+.sign p{font-size:1rem;color:#e8f0e0;margin-bottom:.4rem}.sign p b{font-family:'Oswald';font-weight:500;color:#fef1c4}
+.sign .route{background:#fef1c4;color:#1f6b4a}.sign .route:hover{background:#fff}
+.contacts{display:block;max-width:760px}
+.map{height:340px}
+
+.burger{display:none;width:42px;height:38px;background:none;border:2px solid var(--cream);border-radius:4px;cursor:pointer;padding:0;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.burger span{display:block;width:22px;height:3px;background:var(--cream);transition:transform .3s,opacity .2s}
+.burger.on span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.mnav{display:none}
+header.top nav{gap:.6rem}
+@media(max-width:760px){
+ body{font-size:16px}
+ header.top{padding:.5rem .8rem}
+ .logo{font-size:1rem}
+ section{padding:2.5rem .8rem}
+ .hero{padding:1.5rem .9rem 0}
+ .hero-in{text-align:center}
+ .tag{margin:auto;text-align:left}
+ .arrow{margin:1rem 0 1.5rem}
+ .slogan{letter-spacing:.05em;font-size:1rem}.slogan span{margin:0 .3rem}
+ .mast .meta{flex-direction:column;text-align:center}
+ .cat{font-size:1.2rem}
+ .grid{grid-template-columns:1fr 1fr;gap:.8rem}
+ .tick{padding:.6rem .6rem .7rem}
+ .tick h4{font-size:1.05rem}.tick p{font-size:.82rem}
+ .tick .row{flex-direction:column;align-items:stretch;gap:.4rem}
+ .price{font-size:1.5rem}.add{width:100%;padding:.6rem}
+ .gost span{font-size:.8rem}
+ .sign{padding:1.1rem .9rem}
+ .map{height:260px}
+ .stamp{width:88vw}
+}
+@media(max-width:400px){.grid{grid-template-columns:1fr}.tick .row{flex-direction:row;align-items:flex-end}.add{width:auto}}
+.tabs{max-width:1100px;margin:0 auto 1rem;display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center}
+.tab{background:transparent;color:var(--cream);border:2px solid var(--cream);font:500 1rem 'Oswald';text-transform:uppercase;padding:.5rem 1rem;cursor:pointer;border-radius:3px;transition:background .2s,color .2s}
+.tab:hover{background:rgba(254,241,196,.15)}.tab.on{background:var(--cream);color:var(--red)}
+.msec[hidden]{display:none}
+.sec-h{max-width:1100px;margin:2.5rem auto 0;text-align:center;border-top:3px double var(--gold);border-bottom:3px double var(--gold);padding:1rem .5rem}
+.sec-h h3{font:400 clamp(2rem,6vw,3.2rem)/1.1 'Marck Script',cursive;color:var(--cream)}
+.sec-h p{font:italic 1rem 'PT Serif';color:#ffd98a}
+h4.cat{margin-top:1.6rem}
+.addr-sel{width:100%;margin:.2rem 0 .8rem;padding:.7rem 2.2rem .7rem .9rem;font:500 1.05rem 'PT Serif',serif;color:#2a1610;background:#fef1c4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%231f6b4a' stroke-width='2.5'/%3E%3C/svg%3E") no-repeat right .9rem center;border:3px solid #fef1c4;border-radius:4px;appearance:none;-webkit-appearance:none;cursor:pointer}
+.addr-sel:focus-visible{outline:3px solid #f0b44c;outline-offset:2px}
+@media(max-width:860px){
+ nav .hide{display:none}
+ .burger{display:flex}
+ .mnav{display:flex;flex-direction:column;position:fixed;top:56px;left:0;right:0;z-index:19;background:var(--red);border-bottom:4px solid var(--gold);transform:translateY(-120%);transition:transform .35s;box-shadow:0 10px 20px rgba(0,0,0,.35)}
+ .mnav.open{transform:none}
+ .mnav a{color:var(--cream);text-decoration:none;font:500 1.2rem 'Oswald';text-transform:uppercase;padding:.9rem 1.2rem;border-top:1px solid rgba(254,241,196,.25)}
+ .mnav a:active{background:var(--red2)}
+}
+.ph[src=""]{background:rgba(107,82,55,.1);border:2px dashed rgba(107,82,55,.45)}
+.logo-img{border:0;background:none;min-height:0;object-fit:contain}
+.logo-img[src=""]{border:2px dashed rgba(254,241,196,.5)}
+/* слайдер фото в карточках */
+.sl{position:relative;margin-bottom:.2rem}
+.slider{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;border-radius:2px}
+.slider::-webkit-scrollbar{display:none}
+.tick .slider img{flex:0 0 100%;width:100%;scroll-snap-align:center;margin:0}
+.sl-btn{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border:0;border-radius:50%;background:rgba(254,241,196,.92);color:var(--red);font:700 1.3rem/1 'Oswald';cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0 0 3px;box-shadow:0 1px 4px rgba(0,0,0,.35)}
+.sl-btn.prev{left:6px}.sl-btn.next{right:6px}
+.dots{position:absolute;left:0;right:0;bottom:8px;display:flex;justify-content:center;gap:5px;pointer-events:none}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(254,241,196,.7);box-shadow:0 0 0 1px rgba(42,22,16,.45)}
+.dots i.on{background:var(--red)}
+@media(hover:none){.sl-btn{display:none}}
+.tick .ext{flex:0 0 auto;font-size:.78rem;opacity:.75}
+</style>
+</head>
+<body>
+<header class="top">
+ <a class="logo" href="#top" aria-label="Портал в СССР">
+  <img class="ph logo-img" src="photo/logo.jpg" alt="Логотип">
+  <span>ПОРТАЛ★<br>В СССР</span>
+ </a>
+ <nav>
+  <a class="hide" href="#gazeta">О нас</a><a class="hide" href="#history">История</a><a class="hide" href="#menu">Прейскурант</a><a class="hide" href="#adres">Адрес</a>
+  <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mnav"><span></span><span></span><span></span></button>
+  <button class="bag-btn" id="bagBtn" aria-label="Открыть авоську">Авоська · <span id="cnt">0</span></button>
+ </nav>
+</header>
+<div class="mnav" id="mnav">
+ <a href="#top">Главная</a><a href="#gazeta">О нас</a><a href="#history">История</a><a href="#menu">Прейскурант</a><a href="#adres">Адрес</a>
+</div>
+
+<main id="top">
+<div class="hero">
+ <div class="hero-in">
+  <div>
+   <div class="tag">Тепло,<br>уютно,<br>по-домашнему</div>
+   <h1><span class="script">Горячие</span><span class="plak">Пончики<br>и кофе</span></h1>
+   <p class="sub">Вкус детства всегда с тобой! ♡</p>
+   <a class="arrow" href="#menu"><i></i><b>ЗДЕСЬ</b></a>
+  </div>
+  <div class="hero-art">
+   <img class="ph hero-img" src="" alt="Пончики и кофе">
+  </div>
+ </div>
+ <div class="slogan">★ <span></span>Счастье — в простых вещах!<span></span> ★</div>
+</div>
+
+<!-- GAZETA -->
+<section id="gazeta">
+ <article class="paper">
+  <div class="mast">
+   <div class="meta"><span>№ 1 (1)</span><span>Орган трудового коллектива пончиковой</span><span id="date">Великий Новгород</span></div>
+   <h2>Пончиковая правда</h2>
+   <div class="motto">Пролетарии всех стран, соединяйтесь — за чашкой горячего кофе!</div>
+  </div>
+  <h3 class="rev">Горячо, сладко, по ГОСТу!</h3>
+  <p class="lead rev">Репортаж из цеха, где время идёт по-особенному</p>
+  <div class="cols rev" id="cols">
+   <figure class="photo">
+    <img class="ph" src="" alt="Фото пекаря">
+    <figcaption>Мастер смены у фритюра. Тесто — по рецепту, сердце — по призванию.</figcaption>
+   </figure>
+   <p>Если вы, товарищи, давно не чувствовали запаха настоящего детства, поспешите в наш город. Здесь, в самом сердце Великого Новгорода, открылся Портал, ведущий в ту самую эпоху, когда хлеб был душистым, чай — крепким, а пончики подавали горячими, прямо с пылу, с жару.</p>
+   <p>С раннего утра в цехе кипит радость труда. Тесто замешивается вручную и отдыхает положенный срок — ни минутой меньше. Каждый пончик обжаривается до золотистой корочки и ласково присыпается сахарной пудрой.</p>
+   <div class="quote">«Счастье — в простых вещах: в тёплом пончике и чашке кофе в горошек».</div>
+   <p>Особая гордость коллектива — ГОСТ. Мука отборная, масло свежее, молоко настоящее, а секретную рецептуру теста знают лишь трое мастеров. Выдают её только при вступлении в должность, под честное слово и с улыбкой.</p>
+   <p>— Главное — не торопиться, — делится старший пекарь. — Пончик любит, когда с ним по-доброму. Как бабушка пекла: без спешки, но с душой.</p>
+   <p>Зал оформлен так, чтобы каждый гость почувствовал себя дома: скатерти в красную клетку, чашки в горошек, на окнах — тюль. Заглянув сюда по пути на работу, вы получите заряд бодрости на весь трудовой день, а зайдя вечером — тихую радость.</p>
+   <p>Приходите всей семьёй! Для школьников — молочные коктейли, для родителей — крепкий кофе, для бабушек и дедушек — воспоминания, которые не нужно просить в долг.</p>
+  </div>
+  <div class="gost rev"><span>ГОСТ 1952</span><span>Свежайшая выпечка</span><span>Качество проверено временем</span></div>
+ </article>
+</section>
+
+<section id="history">
+ <article class="paper">
+  <div class="mast">
+   <div class="meta"><span>Приложение к «Пончиковой правде»</span><span>Страница из семейного альбома</span></div>
+   <h2>Наша история</h2>
+   <div class="motto">От первой порции до тысячной — всё с любовью</div>
+  </div>
+  <div class="hrow rev">
+   <figure class="photo"><img class="ph" src="" alt="Первая порция"><figcaption>Первая порция. Фото из семейного архива.</figcaption></figure>
+   <div><span class="year">Начало пути</span><h4>Первая порция</h4><p>Всё началось с простой мысли: а что, если вернуть людям вкус настоящих пончиков, как их пекли во дворах и столовых нашего детства? Первые партии пекли в маленькой кухне, а соседи выстраивались в очередь ещё до открытия. Рецепт искали долго: перебрали десятки вариантов теста, пока не нашли тот самый — пышный, золотой, с хрустящей корочкой.</p></div>
+  </div>
+  <div class="hrow rev flip">
+   <figure class="photo"><img class="ph" src="" alt="Дверь в прошлое"><figcaption>Дверь в прошлое. Фото из семейного архива.</figcaption></figure>
+   <div><span class="year">Открытие</span><h4>Дверь в прошлое</h4><p>Затем появился зал: красная клетка на столах, чашки в горошек, занавески на окнах. Каждую мелочь подбирали по старым фотографиям и семейным рассказам. В день открытия двери распахнулись, и гости, переступив порог, будто попали в другое время — тёплое, неспешное и доброе.</p></div>
+  </div>
+  <div class="hrow rev">
+   <figure class="photo"><img class="ph" src="" alt="Живём по ГОСТу"><figcaption>Живём по ГОСТу. Фото из семейного архива.</figcaption></figure>
+   <div><span class="year">Сегодня</span><h4>Живём по ГОСТу</h4><p>Сегодня наш коллектив растёт, но главное не изменилось: свежее тесто каждое утро, горячие пончики на прилавке и улыбка для каждого товарища. Мы по-прежнему хотим, чтобы каждый, кто заходит к нам, вспомнил: счастье — в простых вещах.</p></div>
+  </div>
+ </article>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+ <div class="menu-h"><h2>Что есть вкусненького</h2><!-- <p>Тепло. Вкусно. По-домашнему.</p> --></div>
+ <div class="tabs" id="tabs"></div>
+ <div id="menuRoot"></div>
+ <p class="note">Цены указаны за 100 г. Сиропы и добавки оплачиваются отдельно.</p>
+</section>
+</main>
+
+<footer id="adres">
+ <div class="contacts">
+  <div class="sign">
+   <h2>Пончиковая «Портал в СССР»</h2>
+   <p><b>Адрес:</b></p>
+   <select id="addrSel" class="addr-sel" aria-label="Выберите адрес"></select>
+   <p><b>Часы работы:</b> <span id="hours"></span></p>
+   <p><b>Телефон:</b> <span id="phone"></span></p>
+   <p>Перерыва на обед нет: пончики ждать не любят.</p>
+   <a class="route" id="route" href="#" target="_blank" rel="noopener">Построить маршрут</a>
+  </div>
+  <iframe class="map" id="map" title="Карта" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+ </div>
+ <p class="copy">Наш Великий Новгород ♡ Счастье — в простых вещах!</p>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Авоська">
+ <h5>Ваша авоська <button id="close" aria-label="Закрыть">×</button></h5>
+ <ul id="list"></ul>
+ <div class="total"><span>Итого</span><span id="sum">0 ₽</span></div>
+ <button class="go" id="go" disabled>Оформить заказ</button>
+</aside>
+<div class="stamp" id="stamp">Принято!<small>Заказ передан в цех. Спасибо, товарищ!</small></div>
+
+<script>
+/* =====================================================================
+   ФОТО БЛЮД — ВСТАВЛЯЙТЕ ПУТИ СЮДА (в кавычки между '' ).
+   Пример: p1:['photo/pyshki-pudra.jpg']
+   У блюд с несколькими слотами — каждое фото в свои кавычки, они листаются свайпом.
+   Нужно больше/меньше фото — добавьте/удалите '' в строке блюда.
+   ===================================================================== */
+const PHOTOS={
+ /* ПЫШКИ */
+ p1:['photo/PishkaSpudra.jpg'],                      /* Пышки с сахарной пудрой */
+ p2:['photo/klubnika.jpg','photo/yagodi.jpg','photo/karamel.jpg','photo/sgushenka.jpg','photo/chocolate.jpg'],          /* Пышки с сиропом (5 фото) */
+ p3:['photo/mix.jpg'],                      /* Микс вкусов */
+ p4:['photo/proshloe.jpg'],                      /* Вперёд в прошлое */
+ p5:['photo/boomcolor.jpg'],                      /* Взрыв цвета */
+ p6:['photo/goroh.jpg'],                      /* Шоколадный горошек */
+ p7:['photo/ponchik oseni.jpg'],                      /* Пышки для осени */
+ /* МОРОЖЕНОЕ */
+ m1:['photo/morogaKlubnika.jpg','photo/morogaKaramel.jpg','photo/morogaSgushenka.jpg','photo/morogaChoco.jpg','photo/morogaYagodi.jpg'],          /* Мороженое с сиропом (5 фото) */
+ m2:['photo/rodom-iz-proshlogo.jpg'],                      /* Родом из прошлого */
+ m3:['photo/morozhnie oceni.jpg'],                      /* Мороженое для осени */
+ m4:['photo/mishahappy.jpg'],                      /* Мишкина радость */
+ m5:['photo/oreo.jpg']                       /* Мороженое OREO */
+};
+const MENU=[
+ /* ВРЕМЕННО УБРАНО (ребрендинг). Чтобы вернуть — удалите эти маркеры комментария
+ {id:'warm',t:'Тепло. Вкусно. По-домашнему.',sub:'Сытно, горячо и как у бабушки',cats:[
+  {c:'Из буфета',i:[
+   ['b1','Бургер по-советски','Котлета по ГОСТу, свежая булочка, огурчик и горчица.',220,290],
+   ['b2','Суп дня','Наваристый, как у бабушки. Подаётся с чёрным хлебом.',300,190]]}]},
+ */
+ /* формат позиции: [id, название, описание, примечание, цена, сколько фото (для свайпа)] */
+ {id:'sweet',t:'Для сладкого настроения',sub:'Готовим с любовью!',cats:[
+  {c:'Пышки',i:[
+   ['p1','Пышки с сахарной пудрой','Простое и любимое с детства лакомство, которое отлично подходит к чашечке кофе или чая.','Цена за 100 г.',79],
+   ['p2','Пышки с сиропом','Пышки с сиропом на выбор: клубника, лесные ягоды, карамель, сгущёнка или шоколад. Выбирайте любимый вкус!','Цена за 100 г. Сироп оплачивается отдельно.',79,5],
+   ['p3','Микс вкусов','Советские пышки с лесными ягодами и сгущёнкой. Ягодная кислинка и нежная сладость сгущёнки прекрасно дополняют друг друга!','Цена за 100 г. Сироп «Лесные ягоды» и сгущёнка оплачиваются отдельно.',79],
+   ['p4','Вперёд в прошлое','Советские пышки с карамельным сиропом и халвой. Сочетание понятных вкусов в одном десерте!','Цена за 100 г. Карамельный сироп и халва оплачиваются отдельно.',79],
+   ['p5','Взрыв цвета','Советские пышки с шоколадным сиропом, сахарной пудрой и яркими разноцветными шариками. Вкусное и красочное угощение для маленьких и больших сладкоежек!','Цена за 100 г. Шоколадный сироп и цветная посыпка оплачиваются отдельно.',79],
+   ['p6','Шоколадный горошек','Советские пышки с сахарной пудрой, нежной сгущёнкой и хрустящими шариками воздушного риса в белой и тёмной шоколадной глазури.','Цена за 100 г. Сгущёнка и шоколадные шарики оплачиваются отдельно.',79],
+   ['p7','Пышки для осени','Осеннее настроение в любимых советских пышках! Золотистые пышки с ароматным кленовым сиропом — особенное сочетание для уютных осенних дней.','Цена за 100 г. Кленовый сироп оплачивается отдельно.',79]]},
+  {c:'Мороженое',i:[
+   ['m1','Мороженое с сиропом','Нежное мягкое мороженое с сиропом на выбор: клубника, карамель, сгущёнка, шоколад или лесные ягоды. Добавьте любимый вкус к сливочному лакомству!','Цена за 100 г. Сироп оплачивается отдельно.',130,5],
+   ['m2','Родом из прошлого','Мягкое мороженое с карамельным сиропом и рассыпчатой халвой. Сочетание знакомых с детства вкусов в новом исполнении!','Цена за 100 г. Карамельный сироп и халва оплачиваются отдельно.',130],
+   ['m3','Мороженое для осени','Мягкое мороженое с ароматным кленовым сиропом. Нежный холодный десерт с тёплыми карамельными нотками осени!','Цена за 100 г. Кленовый сироп оплачивается отдельно.',130],
+   ['m4','Мишкина радость','Мягкое мороженое с яркой цветной посыпкой и мармеладными мишками с сочной фруктовой начинкой. Настоящий праздник для маленьких сладкоежек!','Цена за 100 г. Цветная посыпка и мармеладные мишки оплачиваются отдельно.',130],
+   ['m5','Мороженое OREO','Нежное мягкое мороженое с шоколадным сиропом, хрустящими шариками воздушного риса в белой и молочной шоколадной глазури и печеньем Oreo.','Цена за 100 г. Сироп, шоколадные шарики и печенье Oreo оплачиваются отдельно.',130]]}
+  /* НАПИТКИ — временно убраны. Вернуть: поставить запятую после ]} выше и раскомментировать
+  ,{c:'Напитки',i:[
+   ['d1','Кофе по-домашнему','Крепкий, горячий, в чашке в горошек.','',110],
+   ['d2','Молочный коктейль','Густой, пломбирный, взбитый до пены.','',160],
+   ['d3','Чай с лимоном','Крепкий чай в гранёном стакане, подстаканник прилагается.','',70]]}
+  */
+ ]}
+];
+/* ===== ПОМЕНЯЙТЕ АДРЕС ЗДЕСЬ — карта подтянется сама ===== */
+const LOCATIONS=[
+ {name:'трц Мармелад 3 этаж',addr:'ул. Ломоносова, 29, Великий Новгород',hours:'ежедневно, с 8:00 до 21:00',phone:'+7 (000) 000-00-00'},
+ {name:'Кремль',addr:'Кремлёвский парк, 15, Великий Новгород',hours:'ежедневно, с 8:00 до 21:00',phone:'+7 (000) 000-00-00'}
+];
+const $=s=>document.querySelector(s),bag={};
+const sel=$('#addrSel');
+sel.innerHTML=LOCATIONS.map((l,i)=>`<option value="${i}">${l.name}</option>`).join('');
+function showLoc(i){const l=LOCATIONS[i],q=encodeURIComponent(l.addr);
+ $('#hours').textContent=l.hours;$('#phone').textContent=l.phone;
+ $('#map').src='https://yandex.ru/map-widget/v1/?text='+q+'&z=16';
+ $('#route').href='https://yandex.ru/maps/?mode=search&text='+q}
+sel.onchange=()=>showLoc(sel.value);showLoc(0);
+const price={};
+const slides=(id,n,k)=>{const ph=PHOTOS[id]||[];const c=Math.max(ph.length,k||1);let im='',dt='';
+ for(let j=0;j<c;j++){im+=`<img class="ph" src="${ph[j]||''}" alt="${n}${c>1?' — фото '+(j+1):''}">`;dt+=`<i${j===0?' class="on"':''}></i>`}
+ return `<div class="sl"><div class="slider" tabindex="0" aria-label="Фото: ${n}">${im}</div>`+(c>1?`<button class="sl-btn prev" data-dir="-1" aria-label="Предыдущее фото">‹</button><button class="sl-btn next" data-dir="1" aria-label="Следующее фото">›</button><div class="dots">${dt}</div>`:'')+`</div>`};
+const card=([id,n,d,x,p,k=1])=>{price[id]=[n,p];return `<div class="tick">${slides(id,n,k)}<div class="gost-l"><span>По ГОСТу</span><span>100 г</span></div><h4>${n}</h4><p>${d}</p><p class="ext">${x}</p><div class="row"><div class="price">${p}<small> ₽</small></div><button class="add" data-id="${id}">В авоську</button></div></div>`};
+$('#tabs').innerHTML=`<button class="tab on" data-tab="all">Всё меню</button>`+MENU.map(g=>`<button class="tab" data-tab="${g.id}">${g.t}</button>`).join('');
+$('#menuRoot').innerHTML=MENU.map(g=>`<div class="msec" data-sec="${g.id}"><div class="sec-h"><h3>${g.t}</h3><p>${g.sub}</p></div>`+g.cats.map(k=>`<h4 class="cat">${k.c}</h4><div class="grid">${k.i.map(card).join('')}</div>`).join('')+`</div>`).join('');
+if(MENU.length<2)$('#tabs').style.display='none';
+$('#tabs').addEventListener('click',e=>{const t=e.target.dataset.tab;if(!t)return;
+ document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));
+ document.querySelectorAll('.msec').forEach(m=>{m.hidden=!(t==='all'||m.dataset.sec===t)})});
+function render(){
+ const ids=Object.keys(bag);let s=0,c=0;
+ $('#list').innerHTML=ids.length?ids.map(id=>{const[n,p]=price[id],q=bag[id];s+=p*q;c+=q;return `<li><span>${n}</span><span class="qty"><button data-m="${id}" aria-label="Меньше">−</button> ${q} <button data-a="${id}" aria-label="Больше">+</button></span><b>${p*q} ₽</b></li>`}).join(''):'<li class="empty">В авоське пока пусто. Выбирайте с прилавка, товарищ!</li>';
+ $('#sum').textContent=s+' ₽';$('#cnt').textContent=c;$('#go').disabled=!c;
+}
+function open(v){$('#drawer').classList.toggle('open',v);$('#scrim').classList.toggle('on',v)}
+document.addEventListener('click',e=>{
+ const t=e.target;
+ if(t.dataset.id){bag[t.dataset.id]=(bag[t.dataset.id]||0)+1;render();const b=$('#bagBtn');b.animate([{transform:'scale(1.25)'},{transform:'scale(1)'}],250);t.textContent='Положено ✓';setTimeout(()=>t.textContent='В авоську',900)}
+ if(t.dataset.a){bag[t.dataset.a]++;render()}
+ if(t.dataset.m){if(--bag[t.dataset.m]<=0)delete bag[t.dataset.m];render()}
+});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-dir]');if(!b)return;const s=b.parentElement.querySelector('.slider');s.scrollBy({left:s.clientWidth*b.dataset.dir,behavior:'smooth'})});
+document.addEventListener('scroll',e=>{const s=e.target;if(!s.classList||!s.classList.contains('slider'))return;const i=Math.round(s.scrollLeft/s.clientWidth);s.parentElement.querySelectorAll('.dots i').forEach((d,j)=>d.classList.toggle('on',j===i))},true);
+$('#bagBtn').onclick=()=>open(true);$('#close').onclick=$('#scrim').onclick=()=>open(false);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')open(false)});
+$('#go').onclick=()=>{open(false);const s=$('#stamp');s.classList.remove('hit');void s.offsetWidth;s.classList.add('hit');for(const k in bag)delete bag[k];render()};
+
+const bg=$('#burger'),mn=$('#mnav');
+function menu(v){bg.classList.toggle('on',v);mn.classList.toggle('open',v);bg.setAttribute('aria-expanded',v)}
+bg.onclick=()=>menu(!mn.classList.contains('open'));
+mn.addEventListener('click',e=>{if(e.target.tagName==='A')menu(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')menu(false)});
+render();
+const d=new Date();$('#date').textContent='Великий Новгород, '+d.toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});
+const revs=document.querySelectorAll('.rev');
+const showAll=()=>revs.forEach(el=>el.classList.add('on'));
+if('IntersectionObserver' in window){
+ const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');io.unobserve(x.target)}}),{threshold:0,rootMargin:'0px 0px -8% 0px'});
+ revs.forEach((el,i)=>{el.style.transitionDelay=Math.min(i*.08,.3)+'s';io.observe(el)});
+ setTimeout(showAll,4000); /* страховка: если что-то не сработало, текст всё равно появится */
+}else showAll();
+</script>
+</body>
+</html>
