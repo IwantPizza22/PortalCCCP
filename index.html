@@ -5,6 +5,9 @@
 <script>document.documentElement.classList.add('js')</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Портал в СССР — горячие пончики и кофе</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Oswald:wght@500;700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
 <style>
@@ -208,7 +211,7 @@ h4.cat{margin-top:1.6rem}
 <body>
 <header class="top">
  <a class="logo" href="#top" aria-label="Портал в СССР">
-  <img class="ph logo-img" src="photo/logo.jpg" alt="Логотип">
+  <img class="ph logo-img" src="logo.jpg" alt="Логотип">
   <span>ПОРТАЛ★<br>В СССР</span>
  </a>
  <nav>
@@ -322,25 +325,25 @@ h4.cat{margin-top:1.6rem}
 <script>
 /* =====================================================================
    ФОТО БЛЮД — ВСТАВЛЯЙТЕ ПУТИ СЮДА (в кавычки между '' ).
-   Пример: p1:['photo/pyshki-pudra.jpg']
+   Пример: p1:['pyshki-pudra.jpg']
    У блюд с несколькими слотами — каждое фото в свои кавычки, они листаются свайпом.
    Нужно больше/меньше фото — добавьте/удалите '' в строке блюда.
    ===================================================================== */
 const PHOTOS={
  /* ПЫШКИ */
- p1:['photo/PishkaSpudra.jpg'],                      /* Пышки с сахарной пудрой */
- p2:['photo/klubnika.jpg','photo/yagodi.jpg','photo/karamel.jpg','photo/sgushenka.jpg','photo/chocolate.jpg'],          /* Пышки с сиропом (5 фото) */
- p3:['photo/mix.jpg'],                      /* Микс вкусов */
- p4:['photo/proshloe.jpg'],                      /* Вперёд в прошлое */
- p5:['photo/boomcolor.jpg'],                      /* Взрыв цвета */
- p6:['photo/goroh.jpg'],                      /* Шоколадный горошек */
- p7:['photo/ponchik oseni.jpg'],                      /* Пышки для осени */
+ p1:['PishkaSpudra.jpg'],                      /* Пышки с сахарной пудрой */
+ p2:['klubnika.jpg','yagodi.jpg','karamel.jpg','sgushenka.jpg','chocolate.jpg'],          /* Пышки с сиропом (5 фото) */
+ p3:['mix.jpg'],                      /* Микс вкусов */
+ p4:['proshloe.jpg'],                      /* Вперёд в прошлое */
+ p5:['boomcolor.jpg'],                      /* Взрыв цвета */
+ p6:['goroh.jpg'],                      /* Шоколадный горошек */
+ p7:['ponchik oseni.jpg'],                      /* Пышки для осени */
  /* МОРОЖЕНОЕ */
- m1:['photo/morogaKlubnika.jpg','photo/morogaKaramel.jpg','photo/morogaSgushenka.jpg','photo/morogaChoco.jpg','photo/morogaYagodi.jpg'],          /* Мороженое с сиропом (5 фото) */
- m2:['photo/rodom-iz-proshlogo.jpg'],                      /* Родом из прошлого */
- m3:['photo/morozhnie oceni.jpg'],                      /* Мороженое для осени */
- m4:['photo/mishahappy.jpg'],                      /* Мишкина радость */
- m5:['photo/oreo.jpg']                       /* Мороженое OREO */
+ m1:['morogaKlubnika.jpg','morogaKaramel.jpg','morogaSgushenka.jpg','morogaChoco.jpg','morogaYagodi.jpg'],          /* Мороженое с сиропом (5 фото) */
+ m2:['rodom-iz-proshlogo.jpg'],                      /* Родом из прошлого */
+ m3:['morozhnie oceni.jpg'],                      /* Мороженое для осени */
+ m4:['mishahappy.jpg'],                      /* Мишкина радость */
+ m5:['oreo.jpg']                       /* Мороженое OREO */
 };
 const MENU=[
  /* ВРЕМЕННО УБРАНО (ребрендинг). Чтобы вернуть — удалите эти маркеры комментария
@@ -413,7 +416,14 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-dir]');if(
 document.addEventListener('scroll',e=>{const s=e.target;if(!s.classList||!s.classList.contains('slider'))return;const i=Math.round(s.scrollLeft/s.clientWidth);s.parentElement.querySelectorAll('.dots i').forEach((d,j)=>d.classList.toggle('on',j===i))},true);
 $('#bagBtn').onclick=()=>open(true);$('#close').onclick=$('#scrim').onclick=()=>open(false);
 document.addEventListener('keydown',e=>{if(e.key==='Escape')open(false)});
-$('#go').onclick=()=>{open(false);const s=$('#stamp');s.classList.remove('hit');void s.offsetWidth;s.classList.add('hit');for(const k in bag)delete bag[k];render()};
+const VK_WEB='https://vk.ru/im/convo/-218675893?entrypoint=community_page&tab=all';
+const VK_APP='vk://vk.ru/im/convo/-218675893';
+function goVK(){
+  const t=setTimeout(()=>{location.href=VK_WEB},1200);
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)clearTimeout(t)});
+  location.href=VK_APP;
+}
+$('#go').onclick=()=>{open(false);const s=$('#stamp');s.classList.remove('hit');void s.offsetWidth;s.classList.add('hit');for(const k in bag)delete bag[k];render();setTimeout(goVK,2000)};
 
 const bg=$('#burger'),mn=$('#mnav');
 function menu(v){bg.classList.toggle('on',v);mn.classList.toggle('open',v);bg.setAttribute('aria-expanded',v)}
